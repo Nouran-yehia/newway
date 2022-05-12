@@ -28,7 +28,7 @@ class ServiceController extends Controller
     {
 
         $services = Service::get();
-        return view('dashboard.service.create', compact('services'));
+        return view('Dashboard.service.create', compact('services'));
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::get('service/index',[ServiceController::class,'index']);
+Route::get('service/create',[ServiceController::class,'create']);
+Route::post('service/create',[ServiceController::class,'store']);
+Route::resource('service', ServiceController::class);
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

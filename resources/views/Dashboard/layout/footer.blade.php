@@ -129,33 +129,7 @@ $( () => {
 
     });
 </script>
-<script>
-          var start_date = new Date().toISOString().split('T')[0];
-        document.getElementsByName("start_date")[0].setAttribute('min', start_date);
-        var end_date = new Date().toISOString().split('T')[0];
-        document.getElementsByName("end_date")[0].setAttribute('min', end_date);
-          function addFunction() {
-              event.preventDefault();
-              var form = document.getElementById("fo1");
-              Swal.fire({
-        title: 'Are you sure?',
-        text: " work has been saved",
 
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, save it!'
-
-      }).then((result) => {
-        if (result.value) {
-            console.log(form);
-
-          form.submit();
-          
-        }
-      })
-          }
-</script>
 
 <script>
 
