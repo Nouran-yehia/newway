@@ -47,7 +47,7 @@ class ServiceController extends Controller
         ];
       
         Service::create($data);
-        return redirect()->route('services.index')->with('success', trans('general.saved'));
+        return redirect()->route('service.index')->with('success', trans('general.saved'));
     }
 
     /**
@@ -59,8 +59,8 @@ class ServiceController extends Controller
     public function edit($id)
     {
         $service = Service::findOrFail($id);
-
-        return view('dashboard.city.edit', compact('service'));
+        $services = Service::get();
+        return view('dashboard.service.edit', compact('service','services'));
     }
 
     /**
@@ -75,7 +75,7 @@ class ServiceController extends Controller
         $service = Service::findOrFail($id);
         $data = $request->all();
         $service->update($data);
-        return redirect()->route('services.index');
+        return redirect()->route('service.index');
     }
 
     /**

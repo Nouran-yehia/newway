@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -56,7 +56,7 @@
 						<li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
 					</ul> -->
 			  </li>
-			   <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+			   <li class="nav-item"><a class="nav-link" href="{{route('services.index')}}">Services</a></li>
 			   <li class="nav-item"><a class="nav-link" href="project.html">Portfolio</a></li>
 			   <!-- <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>

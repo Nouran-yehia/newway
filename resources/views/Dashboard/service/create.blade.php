@@ -10,28 +10,41 @@
   
 @endif
 <div>
-            <form action="{{url('city/create')}}" method="post" enctype="multipart/form-data" id="fo1">
+            <form action="{{route('service.store')}}" method="post" enctype="multipart/form-data" id="fo1">
                 {{ csrf_field() }}
                 <div class="form-group">
-                  <label>Country_name:</label>
-                  <select  name="country_id" class="form-control col-4" style="border-radius:20px">
+                  <label>Parent Service:</label>
+                  <select  name="service_id" class="form-control col-4" style="border-radius:20px">
                     <option></option>
-                  @foreach($services as $country)
-                   <option style="border-radius:10px" value="{{$country->id}}">{{$country->name}}</option>
+                  @foreach($services as $service)
+                   <option style="border-radius:10px" value="{{$service->id}}">{{$service->name}}</option>
                   @endforeach
                 </select>
 
               </div>
                     <div class="form-group">
-                        <label>City_Name_EN:</label>
-                       <input type="text" class="form-control col-4 " style="border-radius:20px" name="name_en">
+                        <label>Name</label>
+                       <input type="text" class="form-control col-4 " style="border-radius:20px" name="name">
 
                     </div>
-                 <div class="form-group">
-                        <label>City_Name_AR:</label>
-                       <input type="text" class="form-control col-4 " style="border-radius:20px"  name="name_ar" >
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" id="summary-ckeditor" name="description"></textarea>
+
 
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Status</label>
+                            <br>
+                            Active
+                            <input type="radio" name="active" checked value='1'/>
+                            Inactive
+                            <input type="radio" name="active" value='0'/>
+
+                        </div>
+                    </div>
+
                     
                  <button style="border-radius:20px"  class="btn btn-primary" type="submit"  onclick="addFunction()"><i class="fas fa-save" > Save</i></button>
         </form>

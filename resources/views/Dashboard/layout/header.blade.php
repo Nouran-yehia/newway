@@ -47,4 +47,5 @@
     <link rel="stylesheet" href="{{url('/')}}/design/admin/https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <!-- <li><a href="{{url("lang/ar")}}">ar</a></li>
     <li><a href="{{url("lang/en")}}">en</a></li> -->
+
   </head>

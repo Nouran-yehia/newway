@@ -55,6 +55,8 @@
 <!-- Bootstrap 4 -->
 <script src="{{url('/')}}/design/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 <script src="{{url('/')}}/design/admin/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="{{url('/')}}/design/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{url('/')}}/design/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -77,7 +79,10 @@
 <script src="{{url('/')}}/design/admin/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
 <script src="{{url('/')}}/design/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
-
+<script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+<script>
+CKEDITOR.replace( 'summary-ckeditor' );
+</script>
 
 <script src="{{asset("js/main.js")}}"></script>
 <script>

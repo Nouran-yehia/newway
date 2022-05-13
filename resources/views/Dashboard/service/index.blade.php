@@ -15,7 +15,7 @@
               <div class="card">
                 <div class="border-bottom p-3 d-flex align-items-center justify-content-between">
                     
-                    <a href="{{url('city/create')}}" class="btn btn-primary">Add New City</a>
+                    <a href="{{url('service/create')}}" class="btn btn-primary">Add New Service</a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -23,23 +23,29 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>city_name</th>
-                        <th>country_name</th>
+                        <th>service name</th>
+                        <th>parent name</th>
+                        <th>Actions</th>
                       
                         
                     </tr>
                     </thead>
                     
                     <tbody>
-                        @foreach ($cities as $city)
-                        <tr>
-                            <td>{{$city->id}}</td>
+                        @foreach ($services as $service)
+                        <tr id="this-{{$service->id}}">
+                            <td>{{$service->id}}</td>
                             <td>
-                              {{$city->name}}
+                              {{$service->name}}
                           </td>
-                            <td>
-                                {{$city->country->name}}
-                            </td>
+                          <td></td>
+                          <td>
+                          <a href="{{ route('service.edit', $service->id) }}" class="btn btn-xs btn-info">Edit</a>
+                          <button class="btn btn-danger btn-sm" onclick="deleteService('{{$service->id}}')">
+                              <i class="fas fa-trash">
+                              </i>
+                          </button>
+                        </td>
                             
                             
                         </tr>
@@ -54,12 +60,43 @@
       </div>
       
 
-@endsection
 
-@section('js')
+<script>
+   function deleteService(id){
+        swal({
+          title: `Are you sure you want to delete this item?`,
+          text: "If you delete this, it will be gone forever.",         
+      })
+      .then((willDelete) => {
+        console.log(willDelete);
 
-<script src="{{ asset('dashboard/plugins/sweetalert2/sweetalert2.min.js') }}" ></script>
+      $.ajax({
+       type: 'DELETE',
+       url: "{{route('service.index')}}"+ '/' + id,
+       data:{
+        "_token": "{{ csrf_token() }}"
+       },
+       dataType: 'JSON',
 
+   });
+            $("#this-"+id).css('display','none');
+            Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
+          
+         
+       
+            
+        
+      });
+        
+   //
+    }
+
+    
+</script>
 
 
 @endsection
